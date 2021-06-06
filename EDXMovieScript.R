@@ -36,7 +36,7 @@ validation <- temp %>%
 removed <- anti_join(temp, validation)
 edx <- rbind(edx, removed)
 rm(dl, ratings, movies, test_index, temp, movielens, removed)
-```
+
 
 head(edx)
 str(edx)
@@ -86,7 +86,7 @@ test <- edx[test_index,]
 
 RMSE <- function(true_ratings, predicted_ratings){
   sqrt(mean((true_ratings - predicted_ratings)^2, na.rm = TRUE))
-
+}
 
 
 
@@ -142,4 +142,3 @@ model_3_valid
 
 RMSE_table<-data.frame(RMSE1,RMSE2_Model_2,model_3_rmse,model_3_valid)
 RMSE_table
-```
